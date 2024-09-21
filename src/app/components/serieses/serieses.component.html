@@ -1,1 +1,17 @@
-<p>serieses works!</p>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- @for (series of seriesList; track $index) { -->
+     <!-- <a href="#"></a> -->
+    <div class="col" *ngFor="let series of seriesList">
+      <div class="card">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + [series.poster_path || series.backdrop_path]" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{series.name}}</h5>
+          <p class="card-text">{{series.vote_average}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- } -->
+
+  </div>
+</div>
