@@ -1,1 +1,28 @@
-<p>series-details works!</p>
+<div class="card my-5 bg-light">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + [seriesDetails.poster_path || seriesDetails.backdrop_path]"
+        class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{seriesDetails.name}}</h5>
+        <p class="card-text">first air date: {{seriesDetails.first_air_date}}</p>
+        <p class="card-text">last air date: {{seriesDetails.last_air_date}}</p>
+        <p class="card-text">vote average: {{seriesDetails.vote_average}}</p>
+        <p class="card-text">number of episodes: {{seriesDetails.number_of_episodes}}</p>
+        <p class="card-text">number of seasons: {{seriesDetails.number_of_seasons}}</p>
+        <p class="card-text">status: {{seriesDetails.status}}</p>
+
+        <p>Sessions: {{seriesDetails.number_of_seasons}}
+        </p>
+        <p>Episodes: {{seriesDetails.number_of_episodes}}</p>
+        <div>genres:
+          <span *ngFor="let genre of seriesDetails.genres" class="badge bg-success p-2 mx-1">
+            {{genre.name}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,17 +1,20 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
     <!-- @for (series of seriesList; track $index) { -->
-     <!-- <a href="#"></a> -->
     <div class="col" *ngFor="let series of seriesList">
-      <div class="card">
-        <img [src]="'https://image.tmdb.org/t/p/w500/' + [series.poster_path || series.backdrop_path]" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{series.name}}</h5>
-          <p class="card-text">{{series.vote_average}}</p>
+      <a class="text-decoration-none" routerLink="/series-details/{{series.id}}">
+
+        <div class="card">
+          <img [src]="'https://image.tmdb.org/t/p/w500/' + [series.poster_path || series.backdrop_path]"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{series.name}}</h5>
+            <p class="card-text">{{series.vote_average}}</p>
+            <p>{{series.first_air_date}}</p>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
     <!-- } -->
-
   </div>
 </div>
